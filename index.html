@@ -1,467 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta/>
-    
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="theme-color"
-          content="#070b14">
-
-    <meta name="description"
-          content="HACKOHOLIC - Future technology, games, apps and devices.">
-
-    <title>HACKOHOLIC | Future Starts Here</title>
-
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HACK - Õ - HÓLIC — technology, AI, apps, games and innovation.">
+  <title>HACK - Õ - HÓLIC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
-
 <header class="navbar">
+  <div class="logo">HACK<span> - Õ - </span>HÓLIC</div>
 
-    <a href="#home" class="logo">
-        HACK<span>OHOLIC</span>
-    </a>
+  <button class="menu-btn" id="menuBtn">☰</button>
 
-    <button class="menu-btn" id="menuBtn">
-        ☰
-    </button>
-
-    <nav id="navMenu">
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#apps">Apps</a>
+    <a href="#games">Games</a>
+    <a href="#ai">AI</a>
+    <a href="#suggest">Suggest</a>
+    <a href="#about">About</a>
+  </nav>
 </header>
 
-
-<!-- HOME -->
+<main>
 
 <section id="home" class="hero">
+  <div class="hero-content">
+    <p class="badge">HÓLIC ECOSYSTEM</p>
 
-    <div class="hero-content">
+    <h1>BUILD.<br><span>HACK.</span><br>CREATE.</h1>
 
-        <p class="tag">
-            HACKOHOLIC TECHNOLOGY
-        </p>
+    <p class="hero-text">
+      Welcome to HACK - Õ - HÓLIC — an independent technology ecosystem
+      for apps, games, AI and hardware.
+    </p>
 
-        <h1>
-            BUILDING THE
-            <span>FUTURE.</span>
-        </h1>
-
-        <p class="hero-text">
-            Games. Apps. Devices. Operating systems.
-            We are building our own technology universe.
-        </p>
-
-        <div class="buttons">
-
-            <a href="#products"
-               class="btn primary">
-                Explore Products
-            </a>
-
-            <a href="#projects"
-               class="btn secondary">
-                Our Projects
-            </a>
-
-        </div>
-
+    <div class="hero-buttons">
+      <a href="#ai" class="btn primary">Try HÓLIC AI</a>
+      <a href="#products" class="btn secondary">Explore</a>
     </div>
-
-    <div class="hero-orb"></div>
-
+  </div>
 </section>
 
-
-<!-- PRODUCTS -->
 
 <section id="products" class="section">
+  <p class="section-tag">01 / PRODUCTS</p>
+  <h2>Things we're building.</h2>
 
-    <div class="section-heading">
+  <div class="cards">
 
-        <p class="tag">OUR PRODUCTS</p>
+    <article class="card">
+      <div class="card-icon">📱</div>
+      <h3>HHV1 ALPHA</h3>
+      <p>
+        A HACK - Õ - HÓLIC phone concept focused on performance,
+        privacy and an unconventional camera experience.
+      </p>
+      <span class="status">CONCEPT</span>
+    </article>
 
-        <h2>
-            Meet the <span>Future</span>
-        </h2>
+    <article class="card">
+      <div class="card-icon">🤖</div>
+      <h3>HÓLIC BOT</h3>
+      <p>
+        Experimental robotics project designed for learning,
+        automation and future smart-device integration.
+      </p>
+      <span class="status">V1 BASIC</span>
+    </article>
 
-        <p>
-            Our first generation of HACKOHOLIC products.
-        </p>
+    <article class="card">
+      <div class="card-icon">💻</div>
+      <h3>HÓLIC SYSTEM</h3>
+      <p>
+        A future ecosystem connecting devices, applications,
+        games and intelligent services.
+      </p>
+      <span class="status">IN DEVELOPMENT</span>
+    </article>
 
-    </div>
-
-
-    <!-- HHV1 ALPHA -->
-
-    <div class="product-card">
-
-        <div class="product-info">
-
-            <div class="product-label">
-                SMARTPHONE • CONCEPT
-            </div>
-
-            <h3>
-                HHV1 <span>ALPHA</span>
-            </h3>
-
-            <p>
-                A futuristic smartphone concept created
-                by HACKOHOLIC.
-            </p>
-
-            <ul>
-                <li>🔄 Rotating Camera</li>
-                <li>⚡ Gaming-focused design</li>
-                <li>🧠 HACKOHOLIC ecosystem</li>
-                <li>🚀 Future-ready concept</li>
-            </ul>
-
-            <button class="btn primary"
-                    onclick="showProduct()">
-                View Product
-            </button>
-
-        </div>
-
-        <div class="phone">
-
-            <div class="camera-module">
-
-                <div class="lens"></div>
-                <div class="lens"></div>
-                <div class="lens"></div>
-
-            </div>
-
-            <div class="phone-screen">
-                HHV1
-                <small>ALPHA</small>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- DEVELOPER JOURNAL -->
-
-    <div class="simple-card">
-
-        <div>
-
-            <p class="product-label">
-                SOFTWARE
-            </p>
-
-            <h3>
-                HACKOHOLIC
-                <span>Developer Journal</span>
-            </h3>
-
-            <p>
-                Your personal place for coding notes,
-                projects, tasks and ideas.
-            </p>
-
-        </div>
-
-        <button class="btn secondary"
-                onclick="journalComingSoon()">
-            Coming Soon
-        </button>
-
-    </div>
-
+  </div>
 </section>
 
 
-<!-- PROJECTS -->
+<section id="apps" class="section dark-section">
+  <p class="section-tag">02 / APPS</p>
+  <h2>Apps for the ecosystem.</h2>
 
-<section id="projects" class="section dark-section">
-
-    <div class="section-heading">
-
-        <p class="tag">WHAT WE BUILD</p>
-
-        <h2>
-            Our <span>Projects</span>
-        </h2>
-
+  <div class="feature">
+    <div>
+      <p class="big-icon">✦</p>
+      <h3>HELLÖ AÌ</h3>
+      <p>
+        A conversational AI application concept for learning,
+        coding, questions and everyday assistance.
+      </p>
     </div>
 
-
-    <div class="project-grid">
-
-        <article class="project-card">
-
-            <div class="project-icon">📱</div>
-
-            <h3>HACKOHOLIC Devices</h3>
-
-            <p>
-                Futuristic smartphones and smart devices
-                designed for the next generation.
-            </p>
-
-            <span>IN DEVELOPMENT</span>
-
-        </article>
-
-
-        <article class="project-card">
-
-            <div class="project-icon">🎮</div>
-
-            <h3>HACKOHOLIC Games</h3>
-
-            <p>
-                Original games, worlds and experiences
-                created by HACKOHOLIC.
-            </p>
-
-            <span>PLANNED</span>
-
-        </article>
-
-
-        <article class="project-card">
-
-            <div class="project-icon">💻</div>
-
-            <h3>HACKOHOLIC OS</h3>
-
-            <p>
-                Our experimental operating-system project
-                focused on customization and security.
-            </p>
-
-            <span>EXPERIMENTAL</span>
-
-        </article>
-
-
-        <article class="project-card">
-
-            <div class="project-icon">🧠</div>
-
-            <h3>Apps & Tools</h3>
-
-            <p>
-                Useful software and developer tools
-                built for everyday creators.
-            </p>
-
-            <span>IN DEVELOPMENT</span>
-
-        </article>
-
-    </div>
-
+    <div class="feature-label">COMING SOON</div>
+  </div>
 </section>
 
 
-<!-- ROADMAP -->
+<section id="games" class="section">
+  <p class="section-tag">03 / GAMES</p>
+  <h2>Play. Create. Experiment.</h2>
 
-<section class="section">
-
-    <div class="section-heading">
-
-        <p class="tag">ROADMAP</p>
-
-        <h2>
-            The <span>Journey</span>
-        </h2>
-
+  <div class="game-grid">
+    <div class="game-card">
+      <span>GAME 01</span>
+      <h3>HÓLIC WORLD</h3>
+      <p>Open-world game concept.</p>
     </div>
 
-
-    <div class="timeline">
-
-        <div class="timeline-item active">
-
-            <b>01</b>
-
-            <div>
-                <h3>HACKOHOLIC Brand</h3>
-                <p>
-                    Website, GitHub and social presence.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <b>02</b>
-
-            <div>
-                <h3>First Software</h3>
-                <p>
-                    Developer Journal and useful apps.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <b>03</b>
-
-            <div>
-                <h3>Games</h3>
-                <p>
-                    Original HACKOHOLIC game projects.
-                </p>
-            </div>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <b>04</b>
-
-            <div>
-                <h3>Devices & OS</h3>
-                <p>
-                    HHV1 ALPHA and future technology.
-                </p>
-            </div>
-
-        </div>
-
+    <div class="game-card">
+      <span>GAME 02</span>
+      <h3>HACK ARENA</h3>
+      <p>Competitive game concept.</p>
     </div>
 
+    <div class="game-card">
+      <span>GAME 03</span>
+      <h3>PROJECT X</h3>
+      <p>Experimental game project.</p>
+    </div>
+  </div>
 </section>
 
 
-<!-- ABOUT -->
+<section id="ai" class="section ai-section">
+  <p class="section-tag">04 / HÓLIC AI</p>
+  <h2>Ask HÓLIC AI.</h2>
+  <p class="section-intro">
+    Ask questions in English, Hindi or Hinglish.
+  </p>
 
-<section id="about" class="section about-section">
+  <div class="ai-box">
 
-    <div class="section-heading">
-
-        <p class="tag">ABOUT HACKOHOLIC</p>
-
-        <h2>
-            Think Different.
-            <span>Build Different.</span>
-        </h2>
-
+    <div class="ai-header">
+      <div class="ai-avatar">H</div>
+      <div>
+        <strong>HÓLIC AI</strong>
+        <small>Online</small>
+      </div>
     </div>
 
-    <p class="about-text">
-        HACKOHOLIC is an independent technology and
-        gaming project focused on creating futuristic
-        software, games, devices and experimental
-        technology.
-    </p>
+    <div id="chatMessages" class="chat-messages">
+      <div class="message ai-message">
+        Namaste! 👋 Main HÓLIC AI hoon. Mujhse kuch bhi poochho.
+      </div>
+    </div>
 
+    <div class="suggestions">
+      <button data-question="What is artificial intelligence?">What is AI?</button>
+      <button data-question="Explain HTML in simple words.">Explain HTML</button>
+      <button data-question="Give me a science fact.">Science fact</button>
+      <button data-question="Help me learn coding.">Learn coding</button>
+    </div>
+
+    <form id="chatForm" class="chat-input">
+      <input
+        id="userInput"
+        type="text"
+        placeholder="Ask HÓLIC AI..."
+        autocomplete="off"
+        required
+      >
+      <button type="submit">➤</button>
+    </form>
+
+  </div>
 </section>
 
 
-<!-- CONTACT -->
+<section id="suggest" class="section">
+  <p class="section-tag">05 / COMMUNITY</p>
+  <h2>Help build HÓLIC.</h2>
 
-<section id="contact" class="contact">
+  <p class="section-intro">
+    Have an idea for an app, game, product or feature?
+    Send it to the HÓLIC community.
+  </p>
 
-    <p class="tag">STAY CONNECTED</p>
+  <div class="suggest-box">
 
-    <h2>
-        Follow the
-        <span>Journey.</span>
-    </h2>
+    <textarea
+      id="suggestionText"
+      maxlength="500"
+      placeholder="Write your idea here..."
+    ></textarea>
 
-    <p>
-        Follow HACKOHOLIC as we build our projects.
-    </p>
+    <div class="suggest-bottom">
+      <span id="charCount">0 / 500</span>
+      <button id="suggestButton" class="btn primary">Submit Suggestion</button>
+    </div>
 
-    <a href="#"
-       class="btn primary"
-       onclick="openYouTube()">
-        ▶ YouTube
-    </a>
+    <div class="counter">
+      <strong id="suggestionCount">0</strong>
+      <span>suggestions submitted on this browser</span>
+    </div>
 
+    <p id="suggestStatus"></p>
+  </div>
 </section>
 
 
-<!-- FOOTER -->
+<section id="about" class="section about">
+  <p class="section-tag">06 / ABOUT</p>
+  <h2>Independent. Experimental. HÓLIC.</h2>
+
+  <p>
+    HACK - Õ - HÓLIC is an independent technology brand focused on
+    experimenting with software, games, AI, hardware and creative ideas.
+  </p>
+
+  <div class="credits">
+    <div>
+      <span>BUILDER / CEO</span>
+      <strong>SUBHAM KUMAR</strong>
+    </div>
+
+    <div>
+      <span>PARTNER / EXPLAINER</span>
+      <strong>SARTHAK KUMAR</strong>
+    </div>
+  </div>
+</section>
+
+</main>
+
 
 <footer>
-
-    <div class="footer-logo">
-        HACKOHOLIC
-    </div>
-
-    <p>
-        © <span id="year"></span> HACKOHOLIC.
-        All rights reserved.
-    </p>
-
-    <p class="footer-small">
-        Built for the future.
-    </p>
-
+  <div class="footer-logo">HACK - Õ - HÓLIC</div>
+  <p>© 2026 HÓLIC ECOSYSTEM. Built independently.</p>
 </footer>
 
-
-<!-- PRODUCT POPUP -->
-
-<div id="popup" class="popup">
-
-    <div class="popup-box">
-
-        <button class="close"
-                onclick="closeProduct()">
-            ✕
-        </button>
-
-        <p class="tag">
-            HACKOHOLIC
-        </p>
-
-        <h2>
-            HHV1 <span>ALPHA</span>
-        </h2>
-
-        <p>
-            HHV1 ALPHA is a futuristic smartphone
-            concept featuring a unique rotating camera
-            system and HACKOHOLIC ecosystem.
-        </p>
-
-        <div class="popup-feature">
-            🔄 Rotating Camera
-        </div>
-
-        <div class="popup-feature">
-            🎮 Gaming-focused concept
-        </div>
-
-        <div class="popup-feature">
-            🚀 HACKOHOLIC ecosystem
-        </div>
-
-    </div>
-
-</div>
-
-
 <script src="script.js"></script>
-
 </body>
-</html>
+                                   </html>
