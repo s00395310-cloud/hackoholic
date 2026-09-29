@@ -1,114 +1,202 @@
-// ======================================
-// HACKOHOLIC OFFICIAL WEBSITE
-// Version 1.0
-// ======================================
-
-
-// Mobile menu
-
-const menuBtn =
-    document.getElementById("menuBtn");
-
-const navMenu =
-    document.getElementById("navMenu");
+const menuBtn = document.getElementById("menuBtn");
+const nav = document.getElementById("nav");
 
 menuBtn.addEventListener("click", () => {
-
-    navMenu.classList.toggle("show");
-
+  nav.classList.toggle("active");
 });
-
-
-// Close mobile menu after clicking link
 
 document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+  });
+});
 
-    link.addEventListener("click", () => {
 
-        navMenu.classList.remove("show");
+// ===============================
+// HÓLIC AI
+// ===============================
 
+const chatForm = document.getElementById("chatForm");
+const userInput = document.getElementById("userInput");
+const chatMessages = document.getElementById("chatMessages");
+
+function addMessage(text, type) {
+  const message = document.createElement("div");
+
+  message.className =
+    type === "user"
+      ? "message user-message"
+      : "message ai-message";
+
+  message.textContent = text;
+
+  chatMessages.appendChild(message);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function addTyping() {
+  const typing = document.createElement("div");
+
+  typing.id = "typingMessage";
+  typing.className = "message ai-message";
+  typing.textContent = "HÓLIC AI is thinking...";
+
+  chatMessages.appendChild(typing);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTyping() {
+  const typing = document.getElementById("typingMessage");
+
+  if (typing) {
+    typing.remove();
+  }
+}
+
+async function askAI(question) {
+
+  if (!question.trim()) return;
+
+  addMessage(question, "user");
+  addTyping();
+
+  try {
+
+    const response = await fetch("/api/chat", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        message: question
+      })
     });
 
+    const data = await response.json();
+
+    removeTyping();
+
+    if (!response.ok) {
+      throw new Error(data.error || "AI request failed");
+    }
+
+    addMessage(data.reply, "ai");
+
+  } catch (error) {
+
+    removeTyping();
+
+    addMessage(
+      "Sorry, HÓLIC AI is currently unavailable. Please check the backend connection.",
+      "ai"
+    );
+
+    console.error(error);
+  }
+}
+
+
+chatForm.addEventListener("submit", async event => {
+
+  event.preventDefault();
+
+  const question = userInput.value.trim();
+
+  if (!question) return;
+
+  userInput.value = "";
+
+  await askAI(question);
 });
 
 
-// Product popup
+// Quick suggestion buttons
 
-const popup =
-    document.getElementById("popup");
+document.querySelectorAll(".suggestions button").forEach(button => {
 
+  button.addEventListener("click", () => {
 
-function showProduct() {
+    const question = button.dataset.question;
 
-    popup.classList.add("show");
+    userInput.value = question;
 
-}
-
-
-function closeProduct() {
-
-    popup.classList.remove("show");
-
-}
-
-
-// Close popup by clicking outside
-
-popup.addEventListener("click", event => {
-
-    if (event.target === popup) {
-
-        closeProduct();
-
-    }
+    userInput.focus();
+  });
 
 });
 
 
-// Developer Journal
+// ===============================
+// SUGGESTION COUNTER
+// ===============================
 
-function journalComingSoon() {
+const suggestionText = document.getElementById("suggestionText");
+const charCount = document.getElementById("charCount");
+const suggestionCount = document.getElementById("suggestionCount");
+const suggestButton = document.getElementById("suggestButton");
+const suggestStatus = document.getElementById("suggestStatus");
 
-    alert(
-        "HACKOHOLIC Developer Journal is coming soon! 🚀"
-    );
+let count =
+  Number(localStorage.getItem("holicSuggestionCount")) || 0;
 
-}
-
-
-// YouTube button
-
-function openYouTube() {
-
-    // Replace this with your real
-    // HACKOHOLIC YouTube channel URL.
-
-    const youtubeURL =
-        "https://www.youtube.com/";
-
-    window.open(
-        youtubeURL,
-        "_blank"
-    );
-
-}
+suggestionCount.textContent = count;
 
 
-// Current year
+suggestionText.addEventListener("input", () => {
 
-document.getElementById("year")
-    .textContent =
-    new Date().getFullYear();
+  charCount.textContent =
+    `${suggestionText.value.length} / 500`;
+
+});
 
 
-// Keyboard support for popup
+suggestButton.addEventListener("click", () => {
 
-document.addEventListener("keydown", event => {
+  const idea = suggestionText.value.trim();
 
-    if (event.key === "Escape") {
+  if (!idea) {
 
-        closeProduct();
+    suggestStatus.textContent =
+      "Please write an idea first.";
 
-    }
+    return;
+  }
+
+  count++;
+
+  localStorage.setItem(
+    "holicSuggestionCount",
+    count
+  );
+
+  suggestionCount.textContent = count;
+
+  suggestionText.value = "";
+  charCount.textContent = "0 / 500";
+
+  suggestStatus.textContent =
+    "Thanks! Your idea has been recorded on this browser.";
+
+});
+
+
+// ===============================
+// ENTER KEY FOR AI
+// ===============================
+
+userInput.addEventListener("keydown", event => {
+
+  if (
+    event.key === "Enter" &&
+    !event.shiftKey
+  ) {
+
+    event.preventDefault();
+
+    chatForm.requestSubmit();
+
+  }
 
 });
