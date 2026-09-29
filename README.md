@@ -13,6 +13,7 @@ HACKOHOLIC is an independent technology and gaming project focused on creating f
 - **Multiple Projects** - Devices, Games, OS, and Apps & Tools
 - **Responsive Design** - Works on all devices
 - **Modern UI** - Gradient design with smooth animations
+- **MÄNÍÆ CITY V1,V2,V1 DEFENATIVE EDITON,V2 DEFENATIVE EDITON** -A open world game launch one by one and the first game MÄNÍÆ CITY V1 launch by 13th agust 2027 and V2 launch by 15th september and defenative edition of V1 on November 2027 and defenative edition of V2 are launch by January
 
 ## Website Sections
 
@@ -21,25 +22,7 @@ HACKOHOLIC is an independent technology and gaming project focused on creating f
 - **Projects** - Overview of all development projects
 - **Roadmap** - Timeline of upcoming milestones
 - **About** - Project information
-- **Contact** - Social media links
-{
-  "name": "hackoholic-ai",
-  "version": "1.0.0",
-  "description": "HACK - Õ - HÓLIC AI backend",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.6.1",
-    "express": "^5.1.0",
-    "openai": "^6.1.0"
-  },
-  "engines": {
-    "node": ">=18"
-  }
-}
+- **Contact** - Social media link
 ## Technologies
 
 - HTML5
